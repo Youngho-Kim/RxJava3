@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnStart = (Button) findViewById(R.id.btnStart);
     }
 
-    PublishSubject<String> publishSubject = PublishSubject.create();
+    PublishSubject<String> publishSubject = PublishSubject.create();        // PublishSubject Observable 생성
     public void doPublish(View view) {
 /*
         // 발행
@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 // 발행
                 for (int i = 0; i < 10; i++) {
+                    // Observable은 새로운 항목들을 배출할 때마다 이 메서드를 호출한다.
+                    // 이 메서드는 Observable이 배출하는 항목을 파라미터로 전달 받는다.
                     behaviorSubject.onNext("A"+i);           // 옵저버블이 발행
                     Log.i("Publish","A"+i);
                     try {
@@ -106,13 +108,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    BehaviorSubject<String> behaviorSubject = BehaviorSubject.create();
+    BehaviorSubject<String> behaviorSubject = BehaviorSubject.create();        // BehaviorSubject Observable 생성
     public void doBehavior(View view) {
         new Thread(){
             @Override
             public void run() {
                 // 발행
                 for (int i = 0; i < 10; i++) {
+                    // Observable은 새로운 항목들을 배출할 때마다 이 메서드를 호출한다.
+                    // 이 메서드는 Observable이 배출하는 항목을 파라미터로 전달 받는다.
                     publishSubject.onNext("B"+i);           // 옵저버블이 발행
                     Log.i("behavior","B"+i);
                     try {
@@ -131,13 +135,15 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    ReplaySubject<String> replaySubject = ReplaySubject.create();
+    ReplaySubject<String> replaySubject = ReplaySubject.create();        // ReplaySubject Observable 생성
     public void doReplay(View view) {
         new Thread(){
             @Override
             public void run() {
                 // 발행
                 for (int i = 0; i < 10; i++) {
+                    // Observable은 새로운 항목들을 배출할 때마다 이 메서드를 호출한다.
+                    // 이 메서드는 Observable이 배출하는 항목을 파라미터로 전달 받는다.
                     replaySubject.onNext("C"+i);           // 옵저버블이 발행
                     Log.i("replay","C"+i);
                     try {
@@ -157,21 +163,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    AsyncSubject<String> asyncSubject = AsyncSubject.create();
+    AsyncSubject<String> asyncSubject = AsyncSubject.create();        // AsyncSubject Observable 생성
     public void doAsync(View view) {
         new Thread(){
             @Override
             public void run() {
                 // 발행
                 for (int i = 0; i < 10; i++) {
-                    asyncSubject.onNext("C"+i);           // 옵저버블이 발행
-                    Log.i("Async","C"+i);
+                    Log.i("Async","D"+i);
+                    // Observable은 새로운 항목들을 배출할 때마다 이 메서드를 호출한다.
+                    // 이 메서드는 Observable이 배출하는 항목을 파라미터로 전달 받는다.
+                    asyncSubject.onNext("D"+i);           // 옵저버블이 발행
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
+                asyncSubject.onComplete();  // 오류가 발생하지 않았다면 Observable은 마지막 onNext를 호출한 후 이 메서드를 호출한다.
             }
         }.start();
     }
