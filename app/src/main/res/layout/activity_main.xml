@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fastcampus.kwave.android.rxjava3.MainActivity">
+
+    <Button
+        android:id="@+id/btnPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="publish"
+        android:onClick="doPublish"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="76dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnBehavior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Behavior"
+        android:onClick="doBehavior"
+        tools:layout_editor_absoluteY="82dp"
+        tools:layout_editor_absoluteX="148dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnPublish"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="146dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnReplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Replay"
+        android:onClick="doReplay"
+        tools:layout_editor_absoluteY="170dp"
+        tools:layout_editor_absoluteX="148dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnBehavior"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnAsync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Async"
+        android:onClick="doAsync"
+        tools:layout_editor_absoluteY="268dp"
+        tools:layout_editor_absoluteX="148dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnReplay"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start"
+        android:onClick="doStart"
+        tools:layout_editor_absoluteY="357dp"
+        tools:layout_editor_absoluteX="148dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="106dp" />
+
+    <Button
+        android:id="@+id/btnSubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="subscribe"
+        android:onClick="getPublish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPublish"
+        app:layout_constraintTop_toTopOf="@+id/btnPublish" />
+</android.support.constraint.ConstraintLayout>
