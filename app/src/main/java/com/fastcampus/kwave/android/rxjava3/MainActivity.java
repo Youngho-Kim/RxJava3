@@ -76,16 +76,22 @@ public class MainActivity extends AppCompatActivity {
 //        publishSubject.onNext("F");
 //        publishSubject.onNext("G");
 
-        // 발행
-        for (int i = 0; i < 100; i++) {
-            publishSubject.onNext("A"+i);
-            Log.i("Publish","A"+i);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        new Thread(){
+            @Override
+            public void run() {
+                // 발행
+                for (int i = 0; i < 100; i++) {
+                    publishSubject.onNext("A"+i);
+                    Log.i("Publish","A"+i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        }
+        }.start();
+
     }
 
 
