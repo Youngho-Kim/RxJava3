@@ -23,14 +23,10 @@
         android:layout_height="wrap_content"
         android:text="Behavior"
         android:onClick="doBehavior"
-        tools:layout_editor_absoluteY="82dp"
-        tools:layout_editor_absoluteX="148dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintTop_toBottomOf="@+id/btnPublish"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="148dp"
-        android:layout_marginEnd="146dp"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="76dp" />
 
     <Button
         android:id="@+id/btnReplay"
@@ -38,14 +34,10 @@
         android:layout_height="wrap_content"
         android:text="Replay"
         android:onClick="doReplay"
-        tools:layout_editor_absoluteY="170dp"
-        tools:layout_editor_absoluteX="148dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintTop_toBottomOf="@+id/btnBehavior"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="148dp"
-        android:layout_marginEnd="148dp"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="76dp" />
 
     <Button
         android:id="@+id/btnAsync"
@@ -53,14 +45,10 @@
         android:layout_height="wrap_content"
         android:text="Async"
         android:onClick="doAsync"
-        tools:layout_editor_absoluteY="268dp"
-        tools:layout_editor_absoluteX="148dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintTop_toBottomOf="@+id/btnReplay"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="148dp"
-        android:layout_marginEnd="148dp"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="76dp" />
 
     <Button
         android:id="@+id/btnStart"
@@ -88,4 +76,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnPublish"
         app:layout_constraintTop_toTopOf="@+id/btnPublish" />
+
+    <Button
+        android:id="@+id/btnGetBehavior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="getBehavior"
+        android:onClick="getBehavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toEndOf="@+id/btnBehavior"
+        android:layout_marginStart="8dp"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintTop_toTopOf="@+id/btnBehavior" />
+
+    <Button
+        android:id="@+id/btnGetReplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="getReplay"
+        android:onClick="getReplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toEndOf="@+id/btnReplay"
+        android:layout_marginStart="8dp"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintTop_toTopOf="@+id/btnReplay" />
+
+    <Button
+        android:id="@+id/btnGetAsync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="getAsync"
+        android:onClick="getAsync"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toEndOf="@+id/btnAsync"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="@+id/btnAsync" />
 </android.support.constraint.ConstraintLayout>
